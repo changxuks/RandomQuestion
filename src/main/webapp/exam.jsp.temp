@@ -1,0 +1,58 @@
+<%@ page language="java" import="java.util.*,com.cheer.domain.Examinee"
+	pageEncoding="utf-8" contentType="text/html; charset=utf-8"%>
+<html>
+<head>
+<title>考试成绩单展示</title>
+<style type="text/css">
+div {
+	position: absolute;
+	top:50px;
+	left:200px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<table border="1px" cellspacing="0" cellpadding="0" style="border-style:solid;">
+			<tr>
+				<th>准考证号</th><th>答对</th><th>答错</th><th>漏答</th><th>分数</th><th>是否合格</th>
+			</tr>
+			
+			<%
+			
+				for (Examinee examinee : (List<Examinee>)request.getAttribute("Examinee"))
+				{
+					out.println("<tr>");
+					//准考证号
+					out.println("<td>");
+					out.println(Examinee.getId());
+					out.println("</td>");
+					//答对
+					out.println("<td>");
+					out.println(Examinee.getName());
+					out.println("</td>");
+					//答错
+					out.println("<td>");
+					out.println(Examinee.getHiredate());
+					out.println("</td>");
+					//漏答
+					out.println("<td>");
+					out.println(Examinee.getHiredate());
+					out.println("</td>");
+					//分数
+					out.println("<td>");
+					out.println(Examinee.getHiredate());
+					out.println("</td>");
+					//合不合格
+					out.println("<td>");
+					out.println(eExaminee.getHiredate());
+					out.println("</td>");
+					
+					out.println("</tr>");
+				}
+			%>
+		</table>
+	</div>
+
+</body>
+</html>

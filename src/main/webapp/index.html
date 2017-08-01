@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户登录首页</title>
+<style type="text/css">
+	#form
+	{
+		text-align : center;
+		position: relative ;
+		top:80px;
+	}
+	
+</style>
+<style type="text/css">
+	#theme
+	{
+		text-align : center;
+		font-size:40px ;
+
+	}
+	
+</style>
+<style type="text/css">
+	#ta
+	{
+		margin:auto;
+		bgcolor:blue;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div >
+		<h1  id="theme">2017年其然软件入学考试</h1>
+	</div>
+	<div id="form">
+		<form action="/servlet/loginServlet" method="post">
+		<table  id="ta">
+			<tr><td>角色</td><td><select name="select" id="select_k1" class="xla_k">
+    				<option value="考生"  >考生</option>
+					<option value="教练员" >教练员</option>
+					</select></td>
+			</tr>		
+			<tr><td>准考证号</td><td><input type="text" name="username" placeholder="请输入用户名" /></td><tr>
+			<tr><td>密码</td><td><input type="password" name="password" placeholder="请输入密码" /></td><tr>
+			<tr><td><input type="submit" value="登录" /></td><td><input type="reset" value="重置" /></td><tr>
+			</table>
+		</form>		
+	</div>
+
+</body>
+</html>
