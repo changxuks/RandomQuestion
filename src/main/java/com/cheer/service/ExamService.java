@@ -9,4 +9,5 @@ public interface ExamService
 {
 	public Exam getExam(int id) throws SQLException, IOException;
 
-}
+	public int getExamSize();
+} 

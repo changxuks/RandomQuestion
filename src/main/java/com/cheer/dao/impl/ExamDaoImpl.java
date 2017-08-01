@@ -73,6 +73,7 @@ public class ExamDaoImpl implements ExamDao
 		String sql = "select * from exam";
 		List<Exam> exams = queryRunnery.query(conn, sql, handler);
 		LOGGER.debug("共查询到{}条数据", exams.size());
+		LOGGER.debug("共查询到{}条数据", exams);
 		return exams;
 	}
 

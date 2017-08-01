@@ -28,9 +28,17 @@ public class PreQuestion extends HttpServlet
 		// 获取index
 		HttpSession session = req.getSession();
 		Integer index = (Integer) session.getAttribute("index");
-		if (null == index)
+		
+		// 如果题目索引已经到达第一页，则直接返回
+		if (index == 1)
 		{
-			index = 1;
+			resp.setCharacterEncoding("utf-8");
+			resp.setContentType("application/json;charset=utf-8");
+			PrintWriter out = resp.getWriter();
+			out.println("{\"message\":\"已经是第一题！\"}");
+			out.flush();
+			out.close();
+			return;
 		}
 
 		// 根据index获取题目

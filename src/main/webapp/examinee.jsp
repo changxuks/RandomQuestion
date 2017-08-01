@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>考试界面</title>
 <script type="text/javascript" src="scripts/jquery-3.2.1.js">
+	
 </script>
 <script type="text/javascript">
 	$(function() {
@@ -16,47 +17,54 @@
 		$.get(url, args, function(data) {
 			var id = data.id;
 			var title = data.title;
-			var selectA = data.selectA;
-			var selectB = data.selectB;
-			var selectC = data.selectC;
-			var selectD = data.selectD;
+			var resultA = data.resultA;
+			var resultB = data.resultB;
+			var resultC = data.resultC;
+			var resultD = data.resultD;
 
-			$("#details").empty()
-					.append(id + "\." + title + "<br>").append(
-							"<input  type='radio'  name='select' value='A'>"
-									+ selectA + "<br>").append(
-							"<input  type='radio'  name='select' value='B'>"
-									+ selectB + "<br>").append(
-							"<input  type='radio'  name='select' value='C'>"
-									+ selectC + "<br>").append(
-							"<input  type='radio'  name='select' value='D'>"
-									+ selectD + "<br>");
-		});		
+			$("#details").empty().append(id + "\." + title + "<br>").append(
+					"<input  type='radio'  name='select' value='A'>" + resultA
+							+ "<br>").append(
+					"<input  type='radio'  name='select' value='B'>" + resultB
+							+ "<br>").append(
+					"<input  type='radio'  name='select' value='C'>" + resultC
+							+ "<br>").append(
+					"<input  type='radio'  name='select' value='D'>" + resultD
+							+ "<br>");
+		});
 		$("#pre").click(
 				function() {
 					var url = this.href;
-					var value=$('input:radio[name="select"]:checked').val();
+					var value = $('input:radio[name="select"]:checked').val();
 					var args = {
-						"time" : new Date(),"select":value
+						"time" : new Date(),
+						"select" : value
 					};
 					$.get(url, args, function(data) {
-						var id = data.id;
-						var title = data.title;
-						var resultA = data.resultA;
-						var resultB = data.resultB;
-						var resultC = data.resultC;
-						var resultD = data.resultD;
 
-						$("#details").empty()
-								.append(id + "\." + title + "<br>").append(
-										"<input  type='radio'  name='select' value='A'>"
-												+ resultA + "<br>").append(
-										"<input  type='radio'  name='select' value='B'>"
-												+ resultB + "<br>").append(
-										"<input  type='radio'  name='select' value='C'>"
-												+ resultC + "<br>").append(
-										"<input  type='radio'  name='select' value='D'>"
-												+ resultD + "<br>");
+						var message = data.message;
+						if (message != undefined) {
+							alert(message);
+						} else {
+							var id = data.id;
+							var title = data.title;
+							var resultA = data.resultA;
+							var resultB = data.resultB;
+							var resultC = data.resultC;
+							var resultD = data.resultD;
+
+							$("#details").empty().append(
+									id + "\." + title + "<br>").append(
+									"<input  type='radio'  name='select' value='A'>"
+											+ resultA + "<br>").append(
+									"<input  type='radio'  name='select' value='B'>"
+											+ resultB + "<br>").append(
+									"<input  type='radio'  name='select' value='C'>"
+											+ resultC + "<br>").append(
+									"<input  type='radio'  name='select' value='D'>"
+											+ resultD + "<br>");
+						}
+
 					});
 
 					return false;
@@ -66,35 +74,42 @@
 		$("#next").click(
 				function() {
 					var url = this.href;
-					var value=$('input:radio[name="select"]:checked').val();
+					var value = $('input:radio[name="select"]:checked').val();
 					var args = {
-						"time" : new Date(),"select":value
+						"time" : new Date(),
+						"select" : value
 					};
 					$.get(url, args, function(data) {
-						var id = data.id;
-						var title = data.title;
-						var selectA = data.selectA;
-						var selectB = data.selectB;
-						var selectC = data.selectC;
-						var selectD = data.selectD;
 
-						$("#details").empty()
-								.append(id + "\." + title + "<br>").append(
-										"<input  type='radio'  name='select' value='A'>"
-												+ selectA + "<br>").append(
-										"<input  type='radio'  name='select' value='B'>"
-												+ selectB + "<br>").append(
-										"<input  type='radio'  name='select' value='C'>"
-												+ selectC + "<br>").append(
-										"<input  type='radio'  name='select' value='D'>"
-												+ selectD + "<br>");
+						var message = data.message;
+						if (message != undefined) {
+							alert(message);
+						} else {
+							var id = data.id;
+							var title = data.title;
+							var resultA = data.resultA;
+							var resultB = data.resultB;
+							var resultC = data.resultC;
+							var resultD = data.resultD;
+
+							$("#details").empty().append(
+									id + "\." + title + "<br>").append(
+									"<input  type='radio'  name='select' value='A'>"
+											+ resultA + "<br>").append(
+									"<input  type='radio'  name='select' value='B'>"
+											+ resultB + "<br>").append(
+									"<input  type='radio'  name='select' value='C'>"
+											+ resultC + "<br>").append(
+									"<input  type='radio'  name='select' value='D'>"
+											+ resultD + "<br>");
+						}
+
 					});
 
 					return false;
 
 				});
 	});
-	
 </script>
 
 </head>

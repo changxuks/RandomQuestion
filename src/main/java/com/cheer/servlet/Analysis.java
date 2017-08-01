@@ -89,7 +89,8 @@ public class Analysis extends HttpServlet
 						}
 					} else
 					{
-						exam.setAnswer(line);
+						String str=line.substring(line.length()-1);
+						exam.setAnswer(str);
 					}
 				}
 			}	

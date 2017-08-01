@@ -23,6 +23,8 @@ public class NextQuestion extends HttpServlet
 {
 
 	private ExamService examService = ExamServiceImpl.getInstance();
+	
+	private final int examSize = examService.getExamSize();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -31,20 +33,24 @@ public class NextQuestion extends HttpServlet
 		HttpSession session = req.getSession();
 		Integer index = (Integer) session.getAttribute("index");
 		
+		// 如果题目索引已经到达最大值，则直接返回
+		if (index == examSize)
+		{
+			resp.setCharacterEncoding("utf-8");
+			resp.setContentType("application/json;charset=utf-8");
+			PrintWriter out = resp.getWriter();
+			out.println("{\"message\":\"已经是最后一题！\"}");
+			out.flush();
+			out.close();
+			return;
+		}
+		
 		//获取单选框选中的值
 		String str=req.getParameter("select");
 		Map<Integer,String> answers=new HashMap<>();
-		if(null!=answers)
-		{
-			
-		}
 		answers.put(index, str);
+		session.setAttribute("answers", answers);
 		
-		if (null == index)
-		{
-			index = 1;
-		}
-
 		// 根据index获取题目
 		String examJson = null;
 		try

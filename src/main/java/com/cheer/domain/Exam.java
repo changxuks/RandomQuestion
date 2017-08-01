@@ -85,7 +85,8 @@ public class Exam
 		this.answer = answer;
 	}
 	
-	public String tostring()
+	@Override
+	public String toString()
 	{
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.DEFAULT_STYLE);
 	}	

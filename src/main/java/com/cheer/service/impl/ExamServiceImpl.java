@@ -26,7 +26,26 @@ public class ExamServiceImpl implements ExamService
 	@Override
 	public Exam getExam(int id) throws SQLException, IOException
 	{
-		return examDao.list().get(id);
+		return examDao.list().get(id - 1);
+	}
+
+	@Override
+	public int getExamSize()
+	{
+		int examSize = 0;
+		try
+		{
+			examSize =examDao.list().size();
+		} catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return examSize;
 	}
 
 }
