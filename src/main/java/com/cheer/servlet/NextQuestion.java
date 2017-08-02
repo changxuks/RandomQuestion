@@ -47,10 +47,10 @@ public class NextQuestion extends HttpServlet
 		
 		//获取单选框选中的值
 		String str=req.getParameter("select");
-		Map<Integer,String> answers=new HashMap<>();
-		answers.put(index, str);
-		session.setAttribute("answers", answers);
-		
+		Map<Integer,String> checked=new HashMap<>();
+		checked.put(index, str);
+		session.setAttribute("checked", checked);
+		System.out.println("第"+index+"题选择为："+checked);
 		// 根据index获取题目
 		String examJson = null;
 		try

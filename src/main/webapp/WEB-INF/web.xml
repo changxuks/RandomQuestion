@@ -1,90 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-
-	<filter>
-		<filter-name>filrstFilter</filter-name>
-		<filter-class>com.cheer.filter.FilrstFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>filrstFilter</filter-name>
-		<url-pattern>/filrstFilter</url-pattern>
-	</filter-mapping>
-	
-	
-	<filter>
-		<filter-name>secondFilter</filter-name>
-		<filter-class>com.cheer.filter.SecondFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>secondFilter</filter-name>
-		<url-pattern>/secondFilter</url-pattern>
-	</filter-mapping>
-	
-	<!-- 登录 -->
-	<servlet>
-		<servlet-name>loginServlet</servlet-name>
-		<servlet-class>com.cheer.servlet.LoginServlet</servlet-class>
-		<init-param>
-			<param-name>Content-Type</param-name>
-			<param-value>text/html;charset=utf-8</param-value>
-		</init-param>
-		<load-on-startup>2</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>loginServlet</servlet-name>
-		<url-pattern>/servlet/loginServlet</url-pattern>
-	</servlet-mapping>
-	
-	<!-- 上传文件 -->
-	<servlet>
-		<servlet-name>downloadServlet</servlet-name>
-		<servlet-class>com.cheer.servlet.DownloadServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>downloadServlet</servlet-name>
-		<url-pattern>/servlet/downloadServlet</url-pattern>
-	</servlet-mapping>
-	
-	<!-- 解析文件 -->
-	<servlet>
-		<servlet-name>analysis</servlet-name>
-		<servlet-class>com.cheer.servlet.Analysis</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>analysis</servlet-name>
-		<url-pattern>/servlet/analysis</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>currentQuestion</servlet-name>
-		<servlet-class>com.cheer.servlet.CurrentQuestion</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>currentQuestion</servlet-name>
-		<url-pattern>/servlet/currentQuestion</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>nextQuestion</servlet-name>
-		<servlet-class>com.cheer.servlet.NextQuestion</servlet-class>
-		<load-on-startup>2</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>nextQuestion</servlet-name>
-		<url-pattern>/servlet/nextQuestion</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>preQuestion</servlet-name>
-		<servlet-class>com.cheer.servlet.PreQuestion</servlet-class>
-		<load-on-startup>3</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>preQuestion</servlet-name>
-		<url-pattern>/servlet/preQuestion</url-pattern>
-	</servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <filter>
+    <filter-name>filrstFilter</filter-name>
+    <filter-class>com.cheer.filter.FilrstFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filrstFilter</filter-name>
+    <url-pattern>/filrstFilter</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>secondFilter</filter-name>
+    <filter-class>com.cheer.filter.SecondFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>secondFilter</filter-name>
+    <url-pattern>/secondFilter</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.cheer.servlet.LoginServlet</servlet-class>
+    <init-param>
+      <param-name>Content-Type</param-name>
+      <param-value>text/html;charset=utf-8</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/servlet/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>downloadServlet</servlet-name>
+    <servlet-class>com.cheer.servlet.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>downloadServlet</servlet-name>
+    <url-pattern>/servlet/downloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>analysis</servlet-name>
+    <servlet-class>com.cheer.servlet.Analysis</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>analysis</servlet-name>
+    <url-pattern>/servlet/analysis</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>currentQuestion</servlet-name>
+    <servlet-class>com.cheer.servlet.CurrentQuestion</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>currentQuestion</servlet-name>
+    <url-pattern>/servlet/currentQuestion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>nextQuestion</servlet-name>
+    <servlet-class>com.cheer.servlet.NextQuestion</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>nextQuestion</servlet-name>
+    <url-pattern>/servlet/nextQuestion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>preQuestion</servlet-name>
+    <servlet-class>com.cheer.servlet.PreQuestion</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>preQuestion</servlet-name>
+    <url-pattern>/servlet/preQuestion</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>   
+    <servlet-name>showGrade</servlet-name>
+    <servlet-class>com.cheer.servlet.ShowGrade</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showGrade</servlet-name>
+    <url-pattern>/servlet/showGrade</url-pattern>
+  </servlet-mapping>
 </web-app>

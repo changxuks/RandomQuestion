@@ -3,6 +3,7 @@ package com.cheer.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,6 +31,8 @@ public class CurrentQuestion extends HttpServlet
 		Integer index = (Integer) session.getAttribute("index");
 		if (null == index)
 		{
+			List<Exam> exams = examService.getAllExams();
+			session.setAttribute("exams", exams);
 			index = 1;
 		}
 

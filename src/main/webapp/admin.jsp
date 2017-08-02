@@ -25,9 +25,14 @@
 						style="border-style: solid" /><br /> <input type="submit"
 						value="上传" />
 				</form>
-				<ul>
+				<br/>
+					${requestScope.insertInfo}
+				<br/>
+					 <a href="<%=request.getContextPath()%>/examinee.jsp">考生开始答题</a>
+				<br/>
+				<!--  <ul>
 					<li><a id="xml"  href="doc/content.json">显示题目信息</a></li>
-				<ul>
+				<ul>-->
 			</div>
 			<div>成绩展示区</div>
 		</div>

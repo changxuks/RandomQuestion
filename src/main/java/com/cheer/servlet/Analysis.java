@@ -8,7 +8,9 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -47,6 +49,7 @@ public class Analysis extends HttpServlet
 			List<Exam> exams = new ArrayList<>();
 			Exam exam = null;
 			int count = 0;
+			
 			while (null != (line = br.readLine()))
 			{
 				count++;
@@ -96,14 +99,20 @@ public class Analysis extends HttpServlet
 			}	
 			
 			examDao.save(exams);
-			
+						
 			System.out.println(exams.size());
 			LOGGER.trace("已插入{}条数据"+exams.size());
-			examDao.list();
+			System.out.println(exams);
 			
-			request.setAttribute("message", "数据存储成功");
+			// request.getSession().setAttribute("exams", exams);;
+			
+			// request.setAttribute("message", "数据存储成功");
 
-			request.getRequestDispatcher("/examinee.jsp").forward(request, response);
+			// request.getRequestDispatcher("/examinee.jsp").forward(request, response);
+			
+			
+			request.setAttribute("insertInfo", "插入数据成功");
+			request.getRequestDispatcher("/admin.jsp").forward(request, response);
 		}
 
 		catch (FileNotFoundException e)

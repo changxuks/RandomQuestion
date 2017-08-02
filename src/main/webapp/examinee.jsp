@@ -117,6 +117,8 @@
 	<div id="details"></div>
 	<a id="pre" href="servlet/preQuestion">上一题</a>
 	<a id="next" href="servlet/nextQuestion">下一题</a>
-	<input id="hand" type="submit" value="交卷" />
+	
+	<a id="submit" href="servlet/showGrade">交卷</a>
+	<!-- <input id="hand" type="submit" value="交卷" />  -->
 </body>
 </html>
